@@ -1,0 +1,26 @@
+{
+  "name": "02-ignite",
+  "version": "1.0.0",
+  "description": "Adding parcel to our app",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gowthami-sukhavasi/Namaste-React.git"
+  },
+  "author": "Gowthami S",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gowthami-sukhavasi/Namaste-React/issues"
+  },
+  "homepage": "https://github.com/gowthami-sukhavasi/Namaste-React#readme",
+  "devDependencies": {
+    "parcel": "^2.8.2",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
