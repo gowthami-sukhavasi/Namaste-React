@@ -1,36 +1,69 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const heading = React.createElement(
-    "h1",
-    {
-      title: "heading",
-      style: { backgroundColor: "teal" },
-      className: "headingClass",
-      id: "headingID",
-    },
-    "I am Heading 1"
+// Nested header element using React.createElement
+const header = React.createElement("div", { className: "title" }, [
+  React.createElement("h1", {}, "I am heading 1 from React.createElement"),
+  React.createElement("h2", {}, "I am heading 2"),
+  React.createElement("h3", {}, "I am heading 3"),
+]);
+
+//create same element using JSX
+const JSX = (
+  <div>
+    <h1>I am heading 1 from JSX</h1>
+    <h2>I am heading 2</h2>
+    <h3>I am heading 3</h3>
+  </div>
+);
+
+//Component Composition
+const Hello = () => {
+  return <h1>I am a Component composition</h1>;
+};
+
+//create same element using functional component
+const Functionalcomponent = () => {
+  return (
+    <div>
+      {header}
+      {JSX}
+      <Hello />
+      {<Hello />}
+      {Hello()}
+      {<Hello></Hello>}
+      <h1>I am heading from functional component</h1>
+      <h2>I am heading 2</h2>
+      <h3>I am heading 3</h3>
+      <Headercomponent />
+    </div>
   );
+};
 
-  console.log(heading);
+const Logo = () => {
+  return <img className="logo" src="https://www.tailorbrands.com/wp-content/uploads/2022/02/icons-27-300x300.png" />;
+};
 
-  const heading2 = React.createElement(
-    "h2",
-    {
-      title: "heading",
-      style: { backgroundColor: "yellow" },
-      className: "headingClass",
-      id: "headingID",
-    },
-    "I am Heading 2"
+const Searchbar = () => {
+  return <input className="searchbar" type="text" placeholder="Search here" />;
+};
+
+const Usericon = () => {
+  return <img className="usericon" src="https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg" />;
+};
+
+ //Header component
+const Headercomponent = () => {
+  return (
+    <div className="headercomponent">
+      <Logo />
+      <Searchbar />
+      <Usericon />
+    </div>
   );
+};
 
-  const container = React.createElement("div", { id: "container" }, [
-    heading,
-    heading2,
-  ]);
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-  const root = ReactDOM.createRoot(document.getElementById("root"));
-
-  //passing a react element inside the root
-  root.render(container);
+//passing a react element inside the root
+root.render(<Functionalcomponent />);

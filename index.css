@@ -1,3 +1,26 @@
-#container{
+.title{
+    border: 1px solid gold;
     background-color: pink;
+}
+
+.headercomponent{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+
+}
+.logo{
+    height: 50px;
+    width: 50px;
+}
+.searchbar{
+   text-align: center;
+   border-radius: 10px;
+   border: 1px solid brown;
+}
+.usericon{
+    height: 50px;
+    width: 50ox;
 }
