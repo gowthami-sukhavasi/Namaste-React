@@ -1,3 +1,5 @@
-# Namaste-React
-
-Code is live on: https://gowthami-namaste-react.netlify.app/
+## 📚 [_Chapter 04 - Talk is Cheap, show me the code_](App.js) (Date: 07-01-2023)
+- 📖 [_Theory Assignment Solution_](./Assignments/Class_4Assignment.pdf)
+- 👨‍💻 [_Coding Assignment_](./App.js)
+- 📘 [_Assignment_](./Assignments/Class4-Assignment.png)
+- [🚀 Live Project App Link 😍](https://gowthami-namaste-react.netlify.app/)
