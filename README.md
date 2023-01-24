@@ -1,3 +1,3 @@
 # Namaste-React
 
-Code is live on: https://gowthami-namaste-react.netlify.app/
+Code is live on: https://gowthami-react-hooks.netlify.app/
