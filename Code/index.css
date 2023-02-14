@@ -83,3 +83,15 @@
     background-position: 1000px 0;
   }
 }
+
+/* .shimmer-card {
+  width: 200px;
+  height: 200px;
+  background-color: lightgray;
+  margin: 20px;
+
+} */
+
+.menu{
+  display: flex;
+}
