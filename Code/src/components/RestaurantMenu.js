@@ -5,7 +5,6 @@ import Shimmer from "./Shimmer";
 
 const RestaurantMenu = () => {
   const params = useParams();
-  console.log(params);
   const { id } = params;
 
   const [restaurant, setRestaurant] = useState(null);
@@ -20,7 +19,6 @@ const RestaurantMenu = () => {
         id
     );
     const json = await data.json();
-    console.log(json.data);
     setRestaurant(json.data);
   }
 
@@ -28,20 +26,39 @@ const RestaurantMenu = () => {
     <Shimmer />
   ) : (
     <div className="menu">
-      <div>
-        <h1>Restaurant id: {id}</h1>
-        <h2>{restaurant?.name} </h2>
-        <img src={IMG_CDN_URL + restaurant?.cloudinaryImageId} />
-        <h3>{restaurant?.area}</h3>
-        <h3>{restaurant?.city}</h3>
-        <h3>{restaurant?.avgRating} stars</h3>
-        <h3>{restaurant?.costForTwoMsg}</h3>
+      <div className="menu-banner">
+        <div>
+          <img
+            src={IMG_CDN_URL + restaurant?.cloudinaryImageId}
+            height="165px"
+            width="250px"
+          />
+        </div>
+        <div className="menu-banner-text">
+          <h4>Restaurant id: {id}</h4>
+          <h1>{restaurant?.name} </h1>
+          <h3>{restaurant?.area + ", " + restaurant?.city}</h3>
+          <h3>{restaurant?.avgRating} stars</h3>
+          <h3>{restaurant?.costForTwoMsg}</h3>
+        </div>
       </div>
       <div>
         <h1>Menu</h1>
         <ul>
           {Object.values(restaurant?.menu?.items).map((item) => (
-            <li key={item.id}>{item.name}</li>
+            <div key={item.id} className="menu-item">
+              <div>
+                <h2>{item?.name} </h2>
+                <p>{item?.description}</p>
+              </div>
+              <div>
+                <img
+                  src={IMG_CDN_URL + item?.cloudinaryImageId}
+                  height="125px"
+                  width="160px"
+                ></img>
+              </div>
+            </div>
           ))}
         </ul>
       </div>
