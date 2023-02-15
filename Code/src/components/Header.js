@@ -1,11 +1,6 @@
 import { useState } from "react";
 import Logo from "../assets/img/foodvilla.png";
-import { Link } from "react-router-dom";
-
-const loggedInUser = () => {
-  //API call to check authentication
-  return false;
-};
+import { Link, useNavigate } from "react-router-dom";
 
 const Title = () => (
   <a href="/">
@@ -14,33 +9,32 @@ const Title = () => (
 );
 
 const Header = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  console.log(useState());
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+  const navigate = useNavigate();
 
   return (
     <div className="header">
       <Title />
       <div className="nav-items">
-        <ul>
-          <li>
-            <Link to="/"> Home</Link>
-          </li>
+        <div>
+          <Link to="/">Home</Link>
+        </div>
 
-          <Link to="/about">
-            <li>About</li>
-          </Link>
+        <div>
+          <Link to="/about">About</Link>
+        </div>
 
-          <Link to="/contact">
-            <li>Contact</li>
-          </Link>
+        <div>
+          <Link to="/contact">Contact</Link>
+        </div>
 
-          <li>Cart</li>
-        </ul>
+        <div>Cart</div>
       </div>
       {isLoggedIn ? (
         <button onClick={() => setIsLoggedIn(false)}>Logout</button>
       ) : (
-        <button onClick={() => setIsLoggedIn(true)}>Login</button>
+        <button onClick={() => navigate("/login")}>Login</button>
       )}
     </div>
   );
